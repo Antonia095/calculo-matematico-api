@@ -12,4 +12,8 @@ public class SimpleMath {
     return numberOne - numberTwo;
   }
 
+  public Double division(Double numberOne, Double numberTwo){
+
+    return numberOne / numberTwo;
+  }
 }

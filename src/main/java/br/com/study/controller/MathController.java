@@ -38,4 +38,16 @@ public class MathController {
 
     return math.subtraction(convertToDouble(numberOne), convertToDouble(numberTwo));
   }
+
+  @RequestMapping("/division/{numberOne}/{numberTwo}")
+  public Double division(
+      @PathVariable("numberOne") String numberOne,
+      @PathVariable("numberTwo") String numberTwo
+  ){
+
+    if(!isNumeric(numberOne) || !isNumeric(numberTwo))
+      throw new UnsupportedMathOperationException("Please set a numeric values!");
+
+    return math.division(convertToDouble(numberOne), convertToDouble(numberTwo));
+  }
 }

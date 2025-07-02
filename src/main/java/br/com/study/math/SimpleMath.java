@@ -12,4 +12,9 @@ public class SimpleMath {
     return numberOne - numberTwo;
   }
 
+  public Double multiplication(Double numberOne, Double numberTwo){
+
+    return numberOne * numberTwo;
+  }
+
 }

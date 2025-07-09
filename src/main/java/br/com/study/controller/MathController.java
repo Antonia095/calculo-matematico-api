@@ -62,4 +62,25 @@ public class MathController {
 
     return math.division(convertToDouble(numberOne), convertToDouble(numberTwo));
   }
+
+  @RequestMapping("/mean/{numberOne}/{numberTwo}")
+  public Double mean(
+      @PathVariable("numberOne") String numberOne,
+      @PathVariable("numberTwo") String numberTwo
+  ){
+
+    if(!isNumeric(numberOne) || !isNumeric(numberTwo))
+      throw new UnsupportedMathOperationException("Please set a numeric values!");
+
+    return math.mean(convertToDouble(numberOne), convertToDouble(numberTwo));
+  }
+
+  @RequestMapping("/square-root/{number}")
+  public Double squareRoot(@PathVariable("number") String number){
+
+    if(!isNumeric(number))
+      throw new UnsupportedMathOperationException("Please set a numeric values!");
+
+    return math.squareRoot(convertToDouble(number));
+  }
 }
